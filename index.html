@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YourJournal</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div id="login">
+    <p id="sideTitle">?</p>
+    <input id="password" type="password" autofocus>
+
+    <button id="restoreButton" type="button">restore</button>
+
+    <input
+        id="restoreFileInput"
+        type="file"
+        accept=".json,application/json"
+        style="display: none;"
+    >
+</div>
+
+
+<div id="journal">
+    <button id="lockButton" type="button">lock</button>
+
+    <div id="editor">
+        <button id="saveEntry">save</button>
+        <button id="showChangePassword" type="button">password</button>
+        <button id="showEntries">entries</button>
+
+       <input id="entryTitle" type="text" placeholder="Title">
+
+       <input
+            id="entryTags"
+            type="text"
+            placeholder="tags"
+            autocomplete="off"
+        >
+
+         <button id="backupButton" type="button">backup</button>
+
+        <textarea id="entry" placeholder="write your journal here..."></textarea>
+
+    </div>
+
+
+
+    <div id="archive">
+
+        <div id="archiveTopBar">
+            <button id="backToEditor">back</button>
+            <p id="archiveHeading">entries</p>
+        </div>
+
+        <div id="archiveSearchBar">
+        <button id="searchButton" type="button">search</button>
+
+        <input
+            id="archiveSearch"
+            type="text"
+            placeholder="search entries"
+            autocomplete="off"
+        >
+    </div>
+
+<div id="entryList"></div>
+    <p id="noSearchResults">no results</p>
+
+
+        <div id="entryList"></div>
+
+    </div>
+
+    <div id="postView">
+        <button id="backToArchive">back</button>
+        <button id="deleteEntry">delete</button>
+
+        <p id="postDate"></p>
+        <h2 id="postTitle"></h2>
+        <p id="postTags"></p>
+        <p id="postBody"></p>
+    </div>
+
+   <div id="changePasswordView" style="display: none;">
+
+    <button id="cancelChangePassword" type="button">
+        back
+    </button>
+
+    <input
+        id="currentPassword"
+        type="password"
+        placeholder="current password"
+    >
+
+    <input
+        id="newPassword"
+        type="password"
+        placeholder="new password"
+    >
+
+    <input
+        id="confirmNewPassword"
+        type="password"
+        placeholder="confirm new password"
+    >
+
+    <button id="changePasswordButton" type="button">
+        change
+    </button>
+
+    <p id="changePasswordMessage"></p>
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

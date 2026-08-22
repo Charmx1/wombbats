@@ -1,0 +1,743 @@
+body {
+    background-color: black;
+
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+input {
+    background-color: black;
+    color: white;
+
+    border: 1px solid white;
+    outline: none;
+
+    width: 180px;
+    height: 24px;
+    
+    padding: 4px 8px;
+
+
+}
+
+
+
+#login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#sideTitle {
+    color: white;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+#journal {
+    display: none;
+    width: 70%;
+    height: 90%;
+}
+
+#entry {
+    display: block;
+
+    width: 100%;
+    height: 58vh;
+    box-sizing: border-box;
+
+    margin-top: 14px;
+    padding: 14px;
+
+    background: #0a0a0a;
+    color: white;
+
+    border: 1px solid #555;
+    outline: none;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13.5px;
+    line-height: 1.55;
+
+    resize: none;
+    overflow-y: auto;
+}
+
+#entry::placeholder {
+    color: #777;
+}
+
+#newEntry {
+    background: none;
+    color: white;
+    border: none;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#saveEntry {
+    background: none;
+    color: white;
+    border: none;
+
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+#entryDate {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+#backToEditor {
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border: none;
+    color: #aaa;
+
+    font-family: monospace;
+    font-size: 15px;
+    
+    font-weight: normal;
+
+    cursor: pointer;
+}
+
+#backToEditor:hover {
+    color: white;
+}
+
+
+#entryList button {
+    display: block;
+    width: 100%;
+
+    background: none;
+    color: white;
+
+    border: none;
+    border-bottom: 1px solid #222;
+
+    padding: 17px 4px;
+
+    text-align: left;
+    white-space: pre-line;
+
+    font: inherit;
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+
+#entryList {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+#showEntries {
+    background: none;
+    color: white;
+    border: none;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+#archive {
+    display: none;
+
+    width: min(900px, calc(100% - 40px));
+    margin: 55px auto 0;
+
+    color: white;
+}
+
+#postTitle {
+    margin: 0 0 22px;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 27px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+#postBody {
+    max-width: 900px;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+#backToArchive {
+    background: none;
+    border: none;
+    color: white;
+
+    padding: 0;
+    margin-right: 16px;
+    margin-bottom: 25px;
+
+    font: inherit;
+    font-family: monospace;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#changePasswordView {
+    font-family: monospace;
+    font-size: 14px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 360px;
+    color: white;
+
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#changePasswordView input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+
+    background-color: black;
+    color: white;
+
+    border: 1px solid #555;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+
+    font: inherit;
+    outline: none;
+}
+
+#changePasswordView input::placeholder {
+    color: #666;
+}
+
+#changePasswordView input:focus {
+    border-color: white;
+}
+
+#cancelChangePassword,
+#changePasswordButton {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    font: inherit;
+    cursor: pointer;
+
+    transition: color 0.15s ease;
+}
+
+#cancelChangePassword {
+    display: block;
+    width: max-content;
+    color: #333;
+
+    margin: 0 auto 20px;
+}
+
+#cancelChangePassword:hover {
+    color: white;
+}
+
+#changePasswordButton {
+    display: block;
+    width: max-content;
+    color: #aaa;
+
+    margin: 18px auto 0;
+}
+
+#changePasswordButton:hover {
+    color: white;
+}
+
+#changePasswordMessage {
+    color: #777;
+    font-size: 17px;
+    margin-top: 15px;
+}
+
+
+#archiveHeading {
+    margin: 0;
+    padding: 0;
+
+    color: #aaa;
+
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: normal;
+
+    text-transform: lowercase;
+}
+
+
+#entryList {
+    width: 100%;
+}
+
+
+#entryList button:hover {
+    background: #080808;
+}
+
+
+/* READING PAGE */
+
+#postView {
+    width: min(900px, calc(100% - 40px));
+    display: none;
+    margin: 55px auto 0;
+    color: white;
+}
+
+#deleteEntry {
+    background: none;
+    border: none;
+
+    color: #777;
+
+    padding: 0;
+    margin-right: 16px;
+
+    font-family: monospace;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+#deleteEntry:hover {
+    color: white;
+}
+
+#postDate {
+    margin-top: 36px;
+    margin-bottom: 11px;
+
+    color: #777;
+
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#archiveTopBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+.archiveEntryDate {
+    display: block;
+
+    color: #777;
+
+    font-family: monospace;
+    font-size: 13px;
+
+    margin-bottom: 7px;
+}
+
+.archiveEntryTitle {
+    display: block;
+
+    color: white;
+
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+    margin-bottom: 6px;
+}
+
+
+
+#entryTitle,
+#entry,
+#postTitle {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#entryTitle {
+    font-size: 14px;
+}
+
+
+
+
+#editor {
+    width: min(900px, calc(100% - 40px));
+    margin: 55px - auto 0;
+    color: white;
+}
+
+#saveEntry
+#showChangePassword,
+#showEntries {
+    background: none;
+    border: none;
+    color: #ddd;
+
+    padding: 0;
+    margin-right: 15px;
+
+    cursor: pointer;
+}
+
+#saveEntry:hover,
+#showChangePassword:hover,
+#showEntries:hover {
+    color: white;
+}
+
+#entryTitle {
+    width: 250px;
+    box-sizing: border-box;
+
+    background: black;
+    color: white;
+
+    border: 1px solid #555;
+    outline: none;
+
+    padding: 7px 9Px;
+
+    font-family: Verdana, Arial, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#entryTitle:focus {
+    border-color: #aaa;
+}
+
+
+#entry:focus {
+    border-color: #777;
+}
+
+#archiveTopBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 34px;
+}
+
+#entryList button:hover {
+    background: #080808;
+}
+
+
+
+#saveEntry,
+#showChangePassword,
+#showEntries {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    color: #ddd;
+
+    padding: 0;
+    margin-right: 16px;
+
+    font-family: monospace;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+
+#archive.compact #entryList {
+    gap: 4px;
+}
+
+#archive.compact #entryList button {
+    padding: 10px 4px;
+}
+
+#archive.compact .archiveEntryTitle {
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+#archive.compact .archiveEntryDate {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+#archive.dense #entryList {
+    gap: 0;
+}
+
+#archive.dense #entryList button {
+    padding: 7px 4px;
+}
+
+archive.dense .archiveEntryTitle {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+#archive.dense .archiveEntryDate {
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+
+#lockButton {
+    position: fixed;
+    top: 28px;
+    right: 32px;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: rgb(18, 15, 27);
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: normal;
+
+    cursor: pointer;
+    z-index: 1000%;
+
+    transition: color 0.15s ease;
+}
+
+#lockButton:hover {
+    color: #aaa;
+}
+
+#lockButton:focus-visible {
+    outline: 1px solid #777;
+    outline-offset: 5px;
+}
+
+
+#backupButton {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+
+    color: rgb(12, 10, 17);
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    transition: color 0.15s ease;
+}
+
+#backupButton:hover {
+    color: white;
+}
+
+#backupButton:focus-visible {
+    outline: 1px solid #777;
+    outline-offset: 5px;
+}
+
+
+#restoreButton {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: rgb(17, 9, 9);
+    font-family: monospace;
+    font-size: 13px;
+    font-weight: normal;
+
+    cursor: pointer;
+
+    transition: color 0.15s ease;
+}
+
+#restoreButton:hover {
+    color: white;
+}
+
+#restoreButton:focus-visible {
+    outline: 1px solid #777;
+    outline-offset: 5px;
+}
+
+
+#searchButton {
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: #333;
+    font-family: monospace;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: color 0.15s ease;
+}
+
+#searchButton:hover{
+    color: white;
+}
+
+
+
+#noSearchResults {
+    display: none;
+    text-align: center;
+
+    margin-top: 28px;
+
+    color: #333;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#archiveSearch {
+    display: none;
+    
+    margin-top: 12px;
+    margin-bottom: 18px;
+
+    width: 260px;
+    max-width: 100%;
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+#archiveSearchBar {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    margin: 24px 0 28px 0;
+}
+
+#archiveSearch.visible {
+    display: block;
+}
+
+#archiveSearch:focus {
+    border-bottom: #777;
+}
+
+#entryTags {
+    background: none;
+    border: 1px solid #333;
+    outline: none;
+
+    padding: 5px 9px;
+    width: 100px;
+
+    color: #aaa;
+    font-family: monospace;
+    font-size: 13px;
+}
+
+#entryTags:focus{
+    border-color: #777;
+}
+
+
+
+.archiveEntryTags,
+#postTags {
+    color: #444;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.archiveEntryTags {
+    display: block;
+    margin-top: 5px;
+}
+
+#postTags {
+    margin-top: 6px;
+    margin-bottom: 22px;
+}
+
+
+#entryTags {
+    width: 250px;
+    height: 24px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 4px 9px;
+
+    position: relative;
+    top: -2.5px;
+}
